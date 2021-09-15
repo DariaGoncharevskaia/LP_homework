@@ -1,0 +1,33 @@
+"""
+Домашнее задание №2
+Дата и время
+1. Напечатайте в консоль даты: вчера, сегодня, 30 дней назад
+2. Превратите строку "01/01/20 12:10:03.234567" в объект datetime
+"""
+from datetime import datetime, date, timedelta
+def print_days():
+    """
+    Эта функция вызывается автоматически при запуске скрипта в консоли
+    В ней надо заменить pass на ваш код
+    """
+    today = datetime.today()
+    delta_1 = timedelta(days=1)
+    yesterday = today - delta_1
+    delta_2 = timedelta(days=30) 
+    month_ago = today - delta_2
+    print('Вчера:', yesterday.date())
+    print('Сегодня:', today.date())
+    print('Месяц назад:', month_ago.date())
+
+
+def str_2_datetime(date_string):
+    """
+    Эта функция вызывается автоматически при запуске скрипта в консоли
+    В ней надо заменить pass на ваш код
+    """
+    date_dt = datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
+    return date_dt
+
+if __name__ == "__main__":
+    print_days()
+    print(str_2_datetime("01/01/20 12:10:03.234567"))
